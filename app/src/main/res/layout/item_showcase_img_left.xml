@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:importantForAccessibility="no"
+        android:background="@android:color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/tmpshowcase_imgvw_left"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_margin="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <!--In Samsung phones we need to make focusable the TextViews inside a RecyclerView so it can be focusable for accessibility-->
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tmp_txvw_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:text="Title"
+            android:focusable="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tmpshowcase_imgvw_left"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/tmpshowcase_imgvw_left"/>
+
+    <TextView
+            android:id="@+id/tmp_txvw_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:text="Subtitle"
+            android:importantForAccessibility="no"
+            app:layout_constraintLeft_toRightOf="@+id/tmpshowcase_imgvw_left"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tmp_txvw_title"/>
+
+    <TextView
+            android:id="@+id/tmp_txvw_minitext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:text="mini text"
+            app:layout_constraintLeft_toRightOf="@+id/tmpshowcase_imgvw_left"
+            app:layout_constraintTop_toBottomOf="@+id/tmp_txvw_subtitle"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tmpshowcase_vw_actions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:text="See more"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barrierAction"/>
+
+    <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierAction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tmp_txvw_minitext,tmp_txvw_subtitle,tmp_txvw_title"
+            tools:layout_editor_absoluteY="91dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
