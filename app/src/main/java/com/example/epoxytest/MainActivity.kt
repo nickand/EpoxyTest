@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.airbnb.epoxy.EpoxyRecyclerView
 import com.example.epoxytest.controller.ShowCaseController
 import com.example.epoxytest.model.ShowCase
+import com.example.epoxytest.model.ShowCaseHeader
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         rvShowCase.setController(showCaseController)
 
-        showCaseController.setData(populateShowCase())
+        showCaseController.setData(populateShowCase(), ShowCaseHeader("Header"))
     }
 
     private fun populateShowCase(): List<ShowCase> {
