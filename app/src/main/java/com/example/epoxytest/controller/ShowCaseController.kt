@@ -11,6 +11,11 @@ class ShowCaseController : Typed2EpoxyController<List<ShowCase>, ShowCaseHeader>
 
     override fun buildModels(dataShowCase: List<ShowCase>?, dataShowCaseHeader: ShowCaseHeader?) {
 
+        headerShowCase {
+            id(HEADER)
+            title("Header")
+        }
+
         dataShowCase?.forEachIndexed { index, item ->
             showCase {
                 id(index.toString())
@@ -20,18 +25,32 @@ class ShowCaseController : Typed2EpoxyController<List<ShowCase>, ShowCaseHeader>
                 image(item.image)
                 button(item.button)
 
-                dataShowCaseHeader?.let {
-                    headerShowCase {
-                        id(HEADER)
-                        title("${it.title} ${index + 1}")
+                headerShowCase {
+                    id(HEADER)
+
+                    when (index) {
+                        0 -> {
+                            title("Reviews")
+                        }
+                        1 -> {
+                            title("Games")
+                        }
+                        2 -> {
+                            title("Top games")
+                        }
                     }
                 }
             }
+        }
 
+        headerShowCase {
+            id(FOOTER)
+            title("Footer")
         }
     }
 
     companion object {
-        private val HEADER = "header_id"
+        private const val HEADER = "header_id"
+        private const val FOOTER = "footer_id"
     }
 }
