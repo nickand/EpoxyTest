@@ -19,27 +19,12 @@ class ShowCaseController : Typed2EpoxyController<List<ShowCase>, ShowCaseHeader>
         dataShowCase?.forEachIndexed { index, item ->
             showCase {
                 id(index.toString())
+                header(item.header)
                 title(item.title)
                 subTitle(item.subTitle)
                 miniText(item.miniText)
                 image(item.image)
                 button(item.button)
-
-                headerShowCase {
-                    id(HEADER)
-
-                    when (index) {
-                        0 -> {
-                            title("Reviews")
-                        }
-                        1 -> {
-                            title("Games")
-                        }
-                        2 -> {
-                            title("Top games")
-                        }
-                    }
-                }
             }
         }
 

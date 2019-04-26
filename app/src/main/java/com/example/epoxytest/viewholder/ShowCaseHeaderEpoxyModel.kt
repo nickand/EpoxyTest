@@ -25,6 +25,6 @@ class HeaderShowCaseHolder : EpoxyHolder() {
     lateinit var title: AppCompatTextView
 
     override fun bindView(itemView: View) {
-        title = itemView.findViewById(R.id.tmp_txvw_title)
+        title = itemView.findViewById(R.id.tmp_txvw_header_title)
     }
 }

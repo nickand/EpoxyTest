@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         val showCases = ArrayList<ShowCase>()
         showCases.add(
             ShowCase(
+                "News",
                 "Title 1",
                 "Subtitle 1",
                 "MiniText 1",
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         )
         showCases.add(
             ShowCase(
+                "Games",
                 "Title 2",
                 "Subtitle 2",
                 "MiniText 2",
@@ -49,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         )
         showCases.add(
             ShowCase(
+                "Reviews",
                 "Title 3",
                 "Subtitle 3",
                 "MiniText 3",

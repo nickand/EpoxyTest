@@ -11,6 +11,8 @@ import com.example.epoxytest.R
 abstract class ShowCaseEpoxyModel : EpoxyModelWithHolder<ShowCaseHolder>() {
 
     @EpoxyAttribute
+    var header: String? = null
+    @EpoxyAttribute
     var title: String? = null
     @EpoxyAttribute
     var subTitle: String? = null
@@ -24,6 +26,7 @@ abstract class ShowCaseEpoxyModel : EpoxyModelWithHolder<ShowCaseHolder>() {
     override fun bind(view: ShowCaseHolder) {
         super.bind(view)
 
+        view.header.text = header
         view.title.text = title
         view.subtitle.text = subTitle
         view.txtStatus.text = miniText
@@ -35,6 +38,7 @@ abstract class ShowCaseEpoxyModel : EpoxyModelWithHolder<ShowCaseHolder>() {
 class ShowCaseHolder : EpoxyHolder() {
 
     lateinit var imgAvatar: AppCompatImageView
+    lateinit var header: AppCompatTextView
     lateinit var title: AppCompatTextView
     lateinit var subtitle: AppCompatTextView
     lateinit var txtStatus: AppCompatTextView
@@ -42,6 +46,7 @@ class ShowCaseHolder : EpoxyHolder() {
 
     override fun bindView(itemView: View) {
         imgAvatar = itemView.findViewById(R.id.tmpshowcase_imgvw_right)
+        header = itemView.findViewById(R.id.tmp_txvw_header_title)
         title = itemView.findViewById(R.id.tmp_txvw_title)
         subtitle = itemView.findViewById(R.id.tmp_txvw_subtitle)
         txtStatus = itemView.findViewById(R.id.tmp_txvw_minitext)
